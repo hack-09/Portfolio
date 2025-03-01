@@ -91,7 +91,7 @@ const HomeFirstSec = () => {
         <div className="relative">
           <div className="absolute inset-0 rounded-full animate-pulse bg-gradient-to-r from-purple-600 to-blue-500 opacity-60 blur-xl"></div>
           <motion.img
-            src="https://raw.githubusercontent.com/hack-09/Portfolio/main/img/picture.jpg"
+            src="https://avatars.githubusercontent.com/u/121863049?v=4"
             alt="Priyanshu - Full Stack Developer"
             className="relative rounded-full border-4 border-gray-700 w-94 h-84 md:w-80 md:h-80 shadow-2xl hover:border-purple-500 transition-all duration-500 cursor-pointer"
             whileHover={{ scale: 1.05 }}
