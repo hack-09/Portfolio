@@ -57,7 +57,10 @@ const HomeFirstSec = () => {
           className="mt-12 flex flex-col sm:flex-row items-center gap-4"
         >
           <a
-            href="https://github.com/hack-09/Portfolio/tree/main/docs/PriyanshuKumar.pdf"
+            href="https://raw.githubusercontent.com/hack-09/Portfolio/main/docs/PriyanshuKumar.pdf"
+            download="Priyanshu_Kumar_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/30"
           >
             <FiDownload className="text-xl" />
