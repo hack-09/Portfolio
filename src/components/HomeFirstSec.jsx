@@ -57,7 +57,7 @@ const HomeFirstSec = () => {
           className="mt-12 flex flex-col sm:flex-row items-center gap-4"
         >
           <a
-            href="https://drive.google.com/file/d/1tH7HS54r76x7tXM7tFPBg5kFAO7WhoKT/view?usp=drive_link"
+            href="https://github.com/hack-09/Portfolio/tree/main/docs/PriyanshuKumar.pdf"
             className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/30"
           >
             <FiDownload className="text-xl" />
@@ -72,7 +72,7 @@ const HomeFirstSec = () => {
               <FiGithub className="text-2xl" />
             </a>
             <a
-              href="https://linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/priyanshukumar9/"
               className="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-300"
               aria-label="LinkedIn"
             >

@@ -11,6 +11,7 @@ const ProjectSec = () => {
       description: "Advanced task management platform with real-time collaboration and JWT authentication",
       tech: ["MERN Stack", "JWT", "WebSockets", "Redis", "Postman"],
       github: "https://github.com/hack-09/TaskFlow",
+      demo: "https://task-management-self-sigma.vercel.app/dashboard",
       category: "Full Stack",
     },
     {
@@ -18,7 +19,7 @@ const ProjectSec = () => {
       description: "Event management system with real-time attendee tracking and analytics dashboard",
       tech: ["MERN Stack", "JWT", "MongoDB", "Chart.js", "Node.js"],
       github: "https://github.com/hack-09/Eventify",
-      demo: "#",
+      demo: "https://event-management-platform-beta.vercel.app/dashboard",
       category: "Web App",
     },
     {
@@ -33,14 +34,13 @@ const ProjectSec = () => {
       description: "Community-driven recipe platform with social features and AI-powered recommendations",
       tech: ["React", "Node.js", "MongoDB", "TensorFlow.js", "AWS S3"],
       github: "https://github.com/hack-09/Recipe-Sharing",
-      demo: "#",
+      demo: "https://recipesharingplatform.onrender.com/",
       category: "Web App",
     },
     {
       title: "Library Management System",
       description: "Automated library system with RFID integration and predictive analytics",
       tech: ["C++", "OOP", "SQLite", "Machine Learning", "Boost Libraries"],
-      github: "https://github.com/hack-09/LibraryManagement",
       category: "Desktop",
     },
     {
@@ -89,7 +89,6 @@ const ProjectSec = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
         >
           {projects.slice(0, visibleProjects).map((project, index) => (
             <motion.div
@@ -146,7 +145,7 @@ const ProjectSec = () => {
         {visibleProjects < projects.length && (
           <div className="text-center mt-12">
             <motion.button
-              onClick={() => setVisibleProjects(prev => prev + 3)}
+              onClick={() => setVisibleProjects(prev => Math.min(prev + 3, projects.length))}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2 mx-auto"
