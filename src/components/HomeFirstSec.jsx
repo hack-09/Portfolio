@@ -12,7 +12,9 @@ const HomeFirstSec = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute w-32 h-32 bg-purple-500 rounded-full -top-16 -left-16 mix-blend-screen opacity-30 animate-blob"></div>
-        <div className="absolute w-48 h-48 bg-blue-400 rounded-full -bottom-24 -right-24 mix-blend-screen opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute w-48 h-48 bg-blue-400 rounded-full -bottom-14 -right-14 mix-blend-screen opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute w-48 h-48 bg-blue-400 rounded-full bottom-14 -left-34 mix-blend-screen opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute w-48 h-48 bg-blue-400 rounded-full bottom-84 -left-34 mix-blend-screen opacity-30 animate-blob animation-delay-3000"></div>
       </div>
 
       <motion.div 
@@ -96,7 +98,7 @@ const HomeFirstSec = () => {
           <motion.img
             src="https://avatars.githubusercontent.com/u/121863049?v=4"
             alt="Priyanshu - Full Stack Developer"
-            className="relative rounded-full border-4 border-gray-700 w-94 h-84 md:w-80 md:h-80 shadow-2xl hover:border-purple-500 transition-all duration-500 cursor-pointer"
+            className="relative rounded-full border-4 border-gray-700 w-30 h-30 md:w-85 md:h-85 shadow-2xl hover:border-purple-500 transition-all duration-500 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           />
         </div>
@@ -104,8 +106,8 @@ const HomeFirstSec = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-4 h-8 border-2 rounded-full border-gray-400 relative">
-          <div className="w-1 h-2 bg-gray-400 rounded-full absolute top-2 left-1/2 -translate-x-1/2"></div>
+        <div className="w-18 h-18 border-2 rounded-full border-gray-400 relative">
+          <div className="w-19 h-18 bg-gray-400 rounded-full absolute top-2 left-1/2 -translate-x-1/2"></div>
         </div>
       </div>
     </div>
