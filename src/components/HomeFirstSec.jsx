@@ -98,7 +98,7 @@ const HomeFirstSec = () => {
           <motion.img
             src="https://avatars.githubusercontent.com/u/121863049?v=4"
             alt="Priyanshu - Full Stack Developer"
-            className="relative rounded-full border-4 border-gray-700 w-30 h-30 md:w-85 md:h-85 shadow-2xl hover:border-purple-500 transition-all duration-500 cursor-pointer"
+            className="relative rounded-full border-4 border-gray-700 w-25 h-25 md:w-85 md:h-85 shadow-2xl hover:border-purple-500 transition-all duration-500 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           />
         </div>
