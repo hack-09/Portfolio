@@ -9,6 +9,15 @@ const ProjectSec = () => {
   
   const projects = [
     {
+      id: 0,
+      title: "TrueCheck",
+      description: "A product verification system that enables users to check authenticity using QR code scanning or manual code input. Built to combat counterfeit products and improve trust between brands and customers.",
+      tech: ["React", "Firebase", "Tailwind CSS", "jsQR"],
+      github: "https://github.com/hack-09/product-verification",
+      demo: "https://product-verification-two.vercel.app/",
+      category: "Full Stack",
+    },
+    {
       id: 1,
       title: "TaskFlow",
       description: "Advanced task management platform with real-time collaboration and JWT authentication",
