@@ -19,7 +19,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/product-verification",
       demo: "https://product-verification-two.vercel.app/",
       category: "Full Stack",
-      image: "./truecheck.png",
+      image: "https://raw.githubusercontent.com/hack-09/Portfolio/refs/heads/main/src/assets/truecheck.png",
       accentColor: "from-purple-500 to-indigo-600"
     },
     {
@@ -30,7 +30,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/TaskFlow",
       demo: "https://task-management-self-sigma.vercel.app/dashboard",
       category: "Full Stack",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/taskflow.png",
       accentColor: "from-blue-500 to-cyan-600"
     },
     {
@@ -41,7 +41,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/Eventify",
       demo: "https://event-management-platform-beta.vercel.app/dashboard",
       category: "Web App",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/taskflow.png",
       accentColor: "from-green-500 to-teal-600"
     },
     {
@@ -51,7 +51,7 @@ const ProjectSec = () => {
       tech: ["Java", "Android Studio", "Firebase", "Jitsi Meet SDK", "HIPAA Compliance"],
       github: "https://github.com/hack-09/Telemedicine",
       category: "Mobile",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/telemedicine.png",
       accentColor: "from-red-500 to-orange-600"
     },
     {
@@ -62,7 +62,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/Recipe-Sharing",
       demo: "https://recipesharingplatform.onrender.com/",
       category: "Full Stack",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=80",
+      image: "https://raw.githubusercontent.com/hack-09/Portfolio/refs/heads/main/src/assets/recipe.png",
       accentColor: "from-yellow-500 to-amber-600"
     },
     {
