@@ -1,14 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGlobe ,FiSmartphone ,FiMonitor, FiGithub, FiExternalLink, FiChevronDown, FiGrid, FiList, FiFilter, FiX, FiArrowRight, FiPlay, FiCode, FiLayers } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiChevronDown, FiGrid, FiList, FiFilter, FiCode, FiGlobe, FiSmartphone, FiMonitor } from "react-icons/fi";
 
 const ProjectSec = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
   const [viewMode, setViewMode] = useState("grid");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeProject, setActiveProject] = useState(null);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const containerRef = useRef(null);
   
   const projects = [
     {
@@ -130,112 +128,12 @@ const ProjectSec = () => {
     }
   };
 
-  // Project detail modal
-  const ProjectDetailModal = ({ project, onClose }) => {
-    if (!project) return null;
-
-    return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="relative">
-            <div className="h-64 overflow-hidden">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-              <div className={`absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-90`}></div>
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-gray-900/80 hover:bg-gray-800 transition-colors"
-              >
-                <FiX className="w-6 h-6" />
-              </button>
-            </div>
-            
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className={`flex items-center gap-2 px-3 py-1 bg-gradient-to-r ${project.accentColor} text-white rounded-full text-sm`}>
-                  {getCategoryIcon(project.category)}
-                  {project.category}
-                </span>
-                <h2 className="text-3xl font-bold">{project.title}</h2>
-              </div>
-              
-              <p className="text-gray-300 mb-6">{project.description}</p>
-              
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-3">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-gray-800 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="flex gap-4">
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
-                  >
-                    <FiPlay className="w-5 h-5" />
-                    Live Demo
-                  </a>
-                )}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all"
-                >
-                  <FiGithub className="w-5 h-5" />
-                  View Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    );
-  };
-
   return (
     <div id="projects" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-32 h-32 bg-purple-500 rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `pulse 15s infinite ${i * 2}s`,
-              opacity: 0.2 + Math.random() * 0.2,
-              transform: `scale(${0.5 + Math.random() * 0.8})`
-            }}
-          ></div>
-        ))}
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-20 left-[10%] w-60 h-60 rounded-full bg-purple-500 blur-[100px]"></div>
+        <div className="absolute bottom-10 right-[15%] w-80 h-80 rounded-full bg-blue-500 blur-[120px]"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -243,35 +141,44 @@ const ProjectSec = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
-            Project Portfolio
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
+            Featured Projects
           </h2>
           <p className="text-center text-gray-300 text-lg max-w-2xl mx-auto">
-            A curated collection of my technical implementations across various domains and platforms
+            A collection of my technical implementations across various domains and platforms
           </p>
           
           {/* Stats summary */}
           <div className="flex justify-center mt-8 gap-6 flex-wrap">
-            {[
-              { value: projects.length, label: "Projects", color: "from-purple-500 to-indigo-500" },
-              { value: categories.length - 1, label: "Categories", color: "from-blue-500 to-cyan-500" },
-              { value: "20+", label: "Technologies", color: "from-teal-500 to-green-500" }
-            ].map((stat, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-                className={`text-center bg-gradient-to-br ${stat.color} p-0.5 rounded-xl`}
-              >
-                <div className="bg-gray-900 rounded-xl px-6 py-4">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">{stat.value}</div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-center bg-gray-800/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-gray-700 hover:border-purple-500 transition-all"
+            >
+              <div className="text-2xl font-bold text-purple-400">{projects.length}</div>
+              <div className="text-gray-400">Projects</div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-center bg-gray-800/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-gray-700 hover:border-blue-500 transition-all"
+            >
+              <div className="text-2xl font-bold text-blue-400">{categories.length - 1}</div>
+              <div className="text-gray-400">Categories</div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-center bg-gray-800/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-gray-700 hover:border-teal-500 transition-all"
+            >
+              <div className="text-2xl font-bold text-teal-400">20+</div>
+              <div className="text-gray-400">Technologies</div>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -346,10 +253,9 @@ const ProjectSec = () => {
               View All Projects
             </motion.button>
           </div>
-        ) : (
+        ) : viewMode === 'grid' ? (
           <motion.div
-            ref={containerRef}
-            className={`${viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'flex flex-col gap-6'}`}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -358,55 +264,32 @@ const ProjectSec = () => {
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                className={`group relative bg-gray-800/70 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-transparent transition-all duration-300 overflow-hidden ${
-                  viewMode === 'grid' ? 'h-96' : 'h-auto'
-                }`}
+                className="group relative bg-gray-800/70 backdrop-blur-sm rounded-xl border border-gray-700 hover:border-purple-500 transition-all duration-300 hover:shadow-2xl overflow-hidden flex flex-col h-full"
                 whileHover={{ y: -5 }}
-                onClick={() => setActiveProject(project)}
+                onHoverStart={() => setActiveProject(project.id)}
+                onHoverEnd={() => setActiveProject(null)}
               >
-                {/* Project Image with Gradient Overlay */}
+                {/* Project Image */}
                 <div className="h-48 overflow-hidden relative">
-                  <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10 opacity-80`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10 opacity-70"></div>
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 z-20">
-                    <span className="flex items-center gap-2 px-3 py-1 bg-gray-900/80 text-white rounded-full text-sm backdrop-blur-sm">
+                    <span className="flex items-center gap-2 px-3 py-1 bg-gray-900/80 text-purple-400 rounded-full text-sm backdrop-blur-sm">
                       {getCategoryIcon(project.category)}
                       {project.category}
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4 z-20">
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  </div>
                 </div>
 
-                <div className="p-6">
-                  <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.slice(0, 3).map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-gray-700/50 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.tech.length > 3 && (
-                      <span className="px-3 py-1 bg-gray-700/50 rounded-full text-sm">
-                        +{project.tech.length - 3}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <button className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors">
-                      View Details
-                      <FiArrowRight className="w-4 h-4" />
-                    </button>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold group-hover:text-purple-400 transition-colors">
+                      {project.title}
+                    </h3>
                     <div className="flex gap-2">
                       {project.demo && (
                         <a
@@ -414,10 +297,9 @@ const ProjectSec = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors"
-                          onClick={(e) => e.stopPropagation()}
                           aria-label="Live Demo"
                         >
-                          <FiExternalLink className="w-4 h-4" />
+                          <FiExternalLink className="w-5 h-5" />
                         </a>
                       )}
                       <a
@@ -425,17 +307,100 @@ const ProjectSec = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
                         aria-label="GitHub Repository"
                       >
-                        <FiGithub className="w-4 h-4" />
+                        <FiGithub className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
+                  
+                  <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mt-auto pt-4">
+                    {project.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-gray-700/50 rounded-full text-sm hover:bg-gray-600 transition-colors cursor-default"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Hover accent */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.accentColor} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`} />
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : (
+          // List View
+          <motion.div
+            className="flex flex-col gap-4"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {filteredProjects.slice(0, visibleProjects).map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group relative bg-gray-800/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-purple-500 transition-all duration-300 overflow-hidden"
+                whileHover={{ x: 5 }}
+              >
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="md:w-1/3 overflow-hidden rounded-lg">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  
+                  <div className="md:w-2/3">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-4">
+                        <span className="flex items-center gap-2 px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">
+                          {getCategoryIcon(project.category)}
+                          {project.category}
+                        </span>
+                        <h3 className="text-2xl font-bold group-hover:text-purple-400 transition-colors">
+                          {project.title}
+                        </h3>
+                      </div>
+                      <div className="flex gap-2">
+                        {project.demo && (
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors"
+                          >
+                            <FiExternalLink className="w-4 h-4" />
+                            <span>Demo</span>
+                          </a>
+                        )}
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 hover:bg-purple-600 transition-colors"
+                        >
+                          <FiGithub className="w-4 h-4" />
+                          <span>Code</span>
+                        </a>
+                      </div>
+                    </div>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-700">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-gray-700/50 rounded-full text-sm hover:bg-gray-600 transition-colors cursor-default"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -455,34 +420,8 @@ const ProjectSec = () => {
           </div>
         )}
       </div>
-
-      {/* Project Detail Modal */}
-      <AnimatePresence>
-        {activeProject && (
-          <ProjectDetailModal 
-            project={activeProject} 
-            onClose={() => setActiveProject(null)} 
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Custom animation styles */}
-      <style>{`
-        @keyframes pulse {
-          0% { opacity: 0.2; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(1.1); }
-          100% { opacity: 0.2; transform: scale(1); }
-        }
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
     </div>
   );
 };
-
 
 export default ProjectSec;
