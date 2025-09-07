@@ -52,7 +52,7 @@ const HomeSecondSec = () => {
     },
     {
       title: "Mobile Development",
-      items: ["React Native", "Android Studio", "Expo"],
+      items: ["Android Studio", "SDK"],
       icon: <FiLayers className="w-5 h-5" />,
       color: "from-indigo-500 to-blue-600",
       delay: 0.7

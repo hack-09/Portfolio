@@ -30,7 +30,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/TaskFlow",
       demo: "https://task-management-self-sigma.vercel.app/dashboard",
       category: "Full Stack",
-      image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/taskflow.png",
+      image: "https://raw.githubusercontent.com/hack-09/Portfolio/refs/heads/main/src/assets/taskflow.png",
       accentColor: "from-blue-500 to-cyan-600"
     },
     {
@@ -41,7 +41,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/Eventify",
       demo: "https://event-management-platform-beta.vercel.app/dashboard",
       category: "Web App",
-      image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/taskflow.png",
+      image: "https://raw.githubusercontent.com/hack-09/Portfolio/refs/heads/main/src/assets/eventify.png",
       accentColor: "from-green-500 to-teal-600"
     },
     {
@@ -52,6 +52,7 @@ const ProjectSec = () => {
       github: "https://github.com/hack-09/Telemedicine",
       category: "Mobile",
       image: "https://github.com/hack-09/Portfolio/blob/main/src/assets/telemedicine.png",
+      image: "https://raw.githubusercontent.com/hack-09/Portfolio/refs/heads/main/src/assets/telemedicine.png",
       accentColor: "from-red-500 to-orange-600"
     },
     {
